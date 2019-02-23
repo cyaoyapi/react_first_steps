@@ -17,7 +17,7 @@ class Table extends Component{
 						<td>Computer Scientist</td>
 					</tr>
 					<tr>
-						<td>Cyrille</td>
+						<td>Agnes</td>
 						<td>Cosmetologist</td>
 					</tr>
 					<tr>
