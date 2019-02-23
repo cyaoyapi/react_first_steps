@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import Table from './Table';
+import Form from './Form';
 
 class App extends Component{
 
@@ -15,6 +16,12 @@ class App extends Component{
 		});
 	}
 
+	handleSubmit = person => {
+		this.setState ({
+			people: [...this.state.people, person]
+		});
+	}
+
 	render(){
 		
 		return (
@@ -22,6 +29,8 @@ class App extends Component{
 				<h1>Hello World! I'am learning React.js</h1>
 				<h2>List of persons</h2>
 				<Table tableData={this.state.people} removeData={this.removePerson} />
+				<h2>Add new person</h2>
+				<Form handleSubmit={this.handleSubmit} />
 			</div>
 		);
 	}
