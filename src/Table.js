@@ -6,6 +6,7 @@ const TableHeader = function(){
 			<tr>
 				<th>Name</th>
 				<th>Job</th>
+				<th>Action</th>
 			</tr>
 		</thead>	
 	);
@@ -18,6 +19,11 @@ const TableBody = props => {
 			<tr key={index}>
 				<td>{row.name}</td>
 				<td>{row.job}</td>
+				<td>
+					<button onClick={() => props.removeData(index)}>
+						Delete
+					</button>
+				</td>
 			</tr>
 		);
 	});
@@ -29,11 +35,11 @@ class Table extends Component{
 
 	render(){
 
-		const { tableData } = this.props;
+		const { tableData, removeData } = this.props;
 		return (
 			<table>
 				<TableHeader />
-				<TableBody tableData={tableData} />
+				<TableBody tableData={tableData} removeData={removeData} />
 			</table>
 		);
 	}
